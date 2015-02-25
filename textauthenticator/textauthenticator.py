@@ -26,7 +26,7 @@ class TextAuthenticator(Authenticator):
         if not lines:
             self.log.warn('could not find user %s', user )
             return False
-        if len lines > 1 :
+        if len( lines) > 1 :
             self.log('user %s with more than one line in passwd file', user)
         #here it will take the last line only 
         return passwd == lines[-1][1]
