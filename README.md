@@ -5,7 +5,7 @@ This is a simple authenticator to be used with
 
 it reads usernames and passwords from a text file.
 
-to see a example use the docker images.
+To see a example use the docker images.
 
 build the images:
 
@@ -18,21 +18,13 @@ build the images:
 you can run the example with:
 
 docker run -d \
-
     --net=host \
-    
     --name jupyterhub \
-    
     -v /var/run/docker.sock:/docker.sock \
-    
     -v $PWD/data:/data:ro \
-    
     -e HOME_VOLUME=$PWD/home \
-    
     -e PASSWD_FILE=/data/users.txt \
-    
     diasepfl/jupyterhub 
-    
     
 or just use the script `bin/start_jupyter.sh`
 
