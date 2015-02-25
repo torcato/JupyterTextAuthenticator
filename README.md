@@ -18,12 +18,19 @@ build the images:
 you can run the example with:
 
 docker run -d \
+
     --net=host \
+    
     --name jupyterhub \
+    
     -v /var/run/docker.sock:/docker.sock \
+    
     -v $PWD/data:/data:ro \
+    
     -e HOME_VOLUME=$PWD/home \
+    
     -e PASSWD_FILE=/data/users.txt \
+    
     diasepfl/jupyterhub 
     
 or just use the script `bin/start_jupyter.sh`
