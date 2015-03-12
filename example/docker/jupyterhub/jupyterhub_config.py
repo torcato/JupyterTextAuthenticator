@@ -10,6 +10,8 @@ c.JupyterHub.authenticator_class = 'textauthenticator.TextAuthenticator'
 from IPython.utils.localinterfaces import public_ips
 c.JupyterHub.hub_ip = public_ips()[0]
 
+c.JupyterHub.data_files_path = '/datahub'
+
 c.JupyterHub.spawner_class = 'dockerspawner.DockerSpawner'
 
 c.DockerSpawner.container_image = os.environ.get('CONTAINER_IMAGE','diasepfl/jupyterhub-singleuser')

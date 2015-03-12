@@ -1,0 +1,103 @@
+{% extends "page.html" %}
+
+{% block login_widget %}
+{% endblock %}
+
+{% block main %}
+
+<title>HBP workshop</title>
+
+<!-- Bootstrap core CSS -->
+<!-- Custom styles for this template -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">HBP workshop</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+{% if custom_html %}
+	{{custom_html}}
+	{% else %}
+	  <form  class="navbar-form navbar-right" action="{{login_url}}?next={{next}}" method="post" role="form">
+            <div class="form-group">
+              <input type="text" placeholder="User name" class="form-control" name="username" id="username_input" val="{{username}}">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control" name="password" id="password_input">
+            </div>
+            <button type="submit" class="btn btn-success" id="login_submit">Log in</button>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+    {% if message %}
+      <div class="row">
+        <div class="container">
+          {{message}}
+        </div>
+      </div>
+    {% endif %}
+{% endif %}
+
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Interactive data analysis</h1>
+            <p>The IPython Notebook is a web-based interactive computational 
+            environment where you can combine code execution, text, mathematics, 
+            plots and rich media into a single document</p>
+        </div>
+    </div>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+            <img alt="The IPython notebook with embedded text, code, math and figures." src="/hub/static/cesar/img/9_home_fperez_prof_grants_1207-sloan-ipython_proposal_fig_ipython-notebook-specgram.png" style="width: 350px;"/>
+        </div>
+        <div class="col-md-6">
+          <h1>iPython Notebooks</h2>
+          <p>
+               These notebooks are normal files that can be shared with colleagues,
+               converted to other formats such as HTML or PDF, etc. 
+               You can share any publicly available notebook by using the IPython Notebook Viewer 
+               service which will render it as a static web page. This makes it easy to give 
+               your colleagues a document they can read immediately without having to install anything.
+           </p> 
+           <p>
+                To learn more about using the IPython Notebook, you can visit our example collection, 
+                and you can read the documentation for all the details on how to use and configure the system. 
+                The Notebook Gallery showcases many interesting notebooks covering a variety of topics,
+                from basic programming to advanced scientific computing.
+           </p>
+          <p><a class="btn btn-default" href="http://ipython.org/notebook.html" role="button">Learn more&raquo;</a></p>
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+<!--        <p style="font-size:10px">DIAS Data-Intensive Applications and Systems Lab, EPFL</p>-->
+        <a  href="http://dias.epfl.ch/">
+            <img alt="DIAS logo" src="/hub/static/cesar/img/dias_logo_small.png" style="width: 140px;"  />
+        </a>
+        <a  href="http://www.epfl.ch/" >
+            <img alt="epfl logo" src="/hub/static/cesar/img/epfl_small.png" style="width: 110px;"  ALIGN="right" />
+        </a>
+
+      </footer>
+    </div> 
+
+
+{% endblock %}
+
+
+{% block script %}
+{{super()}}
+
+{% endblock %}

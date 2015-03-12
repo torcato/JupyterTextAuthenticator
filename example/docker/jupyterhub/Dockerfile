@@ -24,6 +24,6 @@ ADD users.txt /data/
 # this is so it can run docker containes in the host machine
 #do not forget to add the volume -v /var/run/docker.sock:/docker.sock
 ENV DOCKER_HOST unix://docker.sock
-
+ADD datahub /
 ADD start.sh /
 CMD ["/start.sh"]

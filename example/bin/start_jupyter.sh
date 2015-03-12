@@ -1,4 +1,4 @@
-#docker run  -v /var/run/docker.sock:/docker.sock  --net=host -ti -p 8000:8000 rawlabs/jupyterhub 
+#!/bin/sh
 
 docker run -d \
     --net=host \
